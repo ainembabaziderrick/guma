@@ -45,12 +45,12 @@
     </div>
     <div class="row">
         <div class="col-xs-12 text-center">
-            <a href="{{ url('/forgot_password') }}">Forgot Password?</a>
+            <a href="{{ url('register') }}">Register</a>
         </div>
     </div>
 </form>
 
-    </div><!-- visit "codeastro" for more projects! -->
+    </div>
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->

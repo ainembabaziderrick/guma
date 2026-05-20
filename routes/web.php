@@ -54,6 +54,7 @@ Route::get('login', function () {
 
 Route::get('register', [AuthController::class, 'Register']
 )->name('register');
+Route::post('/register', [AuthController::class, 'store'])->name('register.post');
 
 Route::get('/about', function () {
     return view('about');

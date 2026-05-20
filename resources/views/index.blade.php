@@ -1,109 +1,56 @@
-@php 
- 
- $products = DB::table('products')->get();
- $blog = DB::table('blog')->get();
- 
-@endphp
 @extends('frontend.layouts.app')
 
 @section('home_content')
+  
 
- <main class="main">
+  <main class="main">
 
     <!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section">
 
-  <div class="container">
-    <div class="row gy-4">
-
-      <!-- TEXT CONTENT -->
-      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-        
-        <h1>Smart Technology Solutions for Your Business</h1>
-        
-        <p>
-          LogicTech Innovationz provides professional services in web design, system development, 
-          CCTV camera installation, GPS tracking, and digital marketing to help your business grow and stay secure.
-        </p>
-
-        @include('message')
-
-
+      <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
+        <img src="assets/img/welcome.jpeg" class="img-fluid animated" alt="">
+        <h1>Welcome to <span>GUMA ENT AND TRAVEL LTD</span></h1>
+        <p>Reliable, innovative, and affordable travel and business solutions that empower people, connect opportunities, and create meaningful experiences across Uganda and beyond.</p>
         <div class="d-flex">
-          <a href="#services" class="btn-get-started">Explore Services</a>
-
-          <a href="#contact" class="btn-watch-video d-flex align-items-center">
-            <i class="bi bi-telephone"></i>
-            <span>Contact Us</span>
-          </a>
+          <a href="#about" class="btn-get-started scrollto">Apply Now</a>
+          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
         </div>
-
       </div>
 
-      <!-- IMAGE -->
-      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
-        <img src="assets/img/hero-img.png" class="img-fluid animated" alt="LogicTech Innovationz Services">
-      </div>
-
-    </div>
-  </div>
-
-</section>
-<!-- /Hero Section -->
+    </section><!-- /Hero Section -->
 
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
 
-      <div class="container" data-aos="zoom-in">
+      <div class="container" data-aos="fade-up">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 5,
-                  "spaceBetween": 120
-                },
-                "1200": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/clients-1.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-2.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-3.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-4.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-5.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-6.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-7.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-8.webp" class="img-fluid" alt=""></div>
-          </div>
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
         </div>
 
       </div>
@@ -111,292 +58,256 @@
     </section><!-- /Clients Section -->
 
     <!-- About Section -->
-<section id="about" class="about section">
+    <section id="about" class="about section">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>About Us</h2>
-  </div><!-- End Section Title -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>Empowering communities through entrepreneurship, tourism, and professional travel support</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <strong>GUMA ENT AND TRAVEL LTD</strong> is a dynamic entrepreneurship and travel company based in Kampala, Uganda. 
+                  We provide innovative business solutions and reliable travel services to individuals, organizations, tourists, entrepreneurs, and corporate clients.
+                </p>
+                <p>
+                  We believe that travel opens doors to opportunity while entrepreneurship builds sustainable growth. Our goal is to connect people, businesses, and destinations efficiently and professionally.
+                </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span><strong>Mission:</strong> Provide reliable, innovative, and affordable    travel and business solutions across Uganda and beyond.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span><strong>Vision:</strong> Become East Africa’s leading entrepreneurship and travel company recognized for excellence and integrity.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span><strong>Values:</strong> Integrity, Customer Commitment, Innovation, Excellence, Accountability, Teamwork, and Empowerment.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <p><strong>Why Choose Us</strong></p>
+              <p>We combine business innovation with exceptional customer service to create opportunities, experiences, and long-term partnerships.</p>
+              <ul>
+                <li><i class="bi bi-check2-circle"></i> <span>Professional and experienced team</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Affordable and reliable services</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Customer-centered approach with timely delivery</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Strong business networks across East Africa</span></li>
+                <li><i class="bi bi-check2-circle"></i> <span>Innovative travel and business solutions</span></li>
+              </ul>
+            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+   <!-- Features Section -->
+<section id="features" class="features section">
 
   <div class="container">
 
-    <div class="row gy-4">
-
-      <!-- LEFT CONTENT -->
-      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-        <p>
-          LogicTech Innovationz is a forward-thinking technology company dedicated to providing reliable and innovative IT solutions. 
-          We help businesses improve efficiency, strengthen security, and enhance their online presence through modern digital tools.
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/tourism.jpeg" class="img-fluid" alt="Travel and Tourism Services">
+      </div>
+      <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+        <h3>Travel & Tourism Services</h3>
+        <p class="fst-italic">
+          We make travel simple, safe, and affordable across Uganda, East Africa, and internationally.
         </p>
-
         <ul>
-          <li><i class="bi bi-check2-circle"></i> <span>Professional Web Design & Development Services</span></li>
-          <li><i class="bi bi-check2-circle"></i> <span>Custom System Development for Businesses</span></li>
-          <li><i class="bi bi-check2-circle"></i> <span>CCTV & GPS Installation for Security and Tracking</span></li>
+          <li><i class="bi bi-check"></i><span> Air ticket reservations and hotel bookings</span></li>
+          <li><i class="bi bi-check"></i> <span>Tour packages, holiday planning, and visa guidance</span></li>
+          <li><i class="bi bi-check"></i> <span>Airport transfers, car hire, and travel insurance assistance</span></li>
         </ul>
       </div>
+    </div><!-- Features Item -->
 
-      <!-- RIGHT CONTENT -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <p>
-          At LogicTech Innovationz, we combine creativity, technology, and expertise to deliver solutions that meet the unique needs of our clients. 
-          Whether you need a professional website, a custom system, or advanced security installations, our team is committed to delivering quality results.
-        </p>
-
-        <p>
-          We pride ourselves on reliability, innovation, and customer satisfaction, making us a trusted partner for businesses looking to grow and succeed in the digital world.
-        </p>
-
-        <a href="#contact" class="read-more">
-          <span>Get In Touch</span><i class="bi bi-arrow-right"></i>
-        </a>
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/img/ent.jpeg" class="img-fluid" alt="Entrepreneurship and Business Services">
       </div>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- /About Section -->
-
-    <!-- Why Us Section -->
-<section id="why-us" class="section why-us light-background">
-
-  <div class="container-fluid">
-
-    <div class="row gy-4">
-
-      <!-- LEFT CONTENT -->
-      <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
-        <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
-          <h3>
-            <span>Why Choose </span>
-            <strong>LogicTech Innovationz?</strong>
-          </h3>
-          <p>
-            We are committed to delivering reliable, innovative, and affordable technology solutions 
-            that help businesses grow, stay secure, and operate efficiently in today’s digital world.
-          </p>
-        </div>
-
-        <!-- FAQ / FEATURES -->
-        <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="faq-item faq-active">
-            <h3><span>01</span> Professional & Reliable Services</h3>
-            <div class="faq-content">
-              <p>
-                Our team delivers high-quality web design, system development, CCTV, and GPS installation services 
-                with a strong focus on reliability and customer satisfaction.
-              </p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
-
-          <div class="faq-item">
-            <h3><span>02</span> Customized Solutions for Your Business</h3>
-            <div class="faq-content">
-              <p>
-                We understand that every business is unique. That’s why we provide tailored solutions 
-                designed to meet your specific needs and goals.
-              </p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
-
-          <div class="faq-item">
-            <h3><span>03</span> Affordable & Scalable Technology</h3>
-            <div class="faq-content">
-              <p>
-                Our solutions are cost-effective and designed to grow with your business, ensuring 
-                long-term value and performance.
-              </p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
-
-          <div class="faq-item">
-            <h3><span>04</span> Fast Support & Maintenance</h3>
-            <div class="faq-content">
-              <p>
-                We provide ongoing support and quick response to ensure your systems and services 
-                run smoothly at all times.
-              </p>
-            </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- IMAGE -->
-      <div class="col-lg-5 order-1 order-lg-2 why-us-img">
-        <img src="assets/img/why-us.png" class="img-fluid" alt="LogicTech Innovationz Services" data-aos="zoom-in" data-aos-delay="100">
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- /Why Us Section -->
-
-    <!-- Skills Section -->
-<section id="skills" class="skills section">
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row">
-
-      <div class="col-lg-6 d-flex align-items-center">
-        <img src="assets/img/illustration/illustration-10.webp" class="img-fluid" alt="Logic Tech Innovationz Skills">
-      </div>
-
-      <div class="col-lg-6 pt-4 pt-lg-0 content">
-
-        <h3>Our Technical Expertise & Capabilities</h3>
+      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+        <h3>Entrepreneurship & Business Services</h3>
         <p class="fst-italic">
-          At Logic Tech Innovationz, we combine creativity and technical expertise to deliver scalable, secure, and modern digital solutions tailored to your business needs.
+          Empowering entrepreneurs and SMEs with practical support to start, grow, and scale.
         </p>
-
-        <div class="skills-content skills-animation">
-
-          <div class="progress">
-            <span class="skill"><span>Web Development (HTML, CSS, Bootstrap)</span> <i class="val">95%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div><!-- End Skills Item -->
-
-          <div class="progress">
-            <span class="skill"><span>JavaScript & React Development</span> <i class="val">90%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div><!-- End Skills Item -->
-
-          <div class="progress">
-            <span class="skill"><span>Backend Development (PHP & Laravel)</span> <i class="val">92%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div><!-- End Skills Item -->
-
-          <div class="progress">
-            <span class="skill"><span>Database Management (MySQL)</span> <i class="val">88%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div><!-- End Skills Item -->
-
-          <div class="progress">
-            <span class="skill"><span>UI/UX Design & Prototyping</span> <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div><!-- End Skills Item -->
-
-        </div>
-
+        <p>
+          From business registration and consultancy to branding, marketing, and investment networking, we help you turn ideas into sustainable ventures. We also provide entrepreneurship training and project management support.
+        </p>
       </div>
-    </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+        <img src="assets/img/copol2.jpeg" class="img-fluid" alt="Corporate Services">
+      </div>
+      <div class="col-md-7" data-aos="fade-up">
+        <h3>Corporate Services</h3>
+        <p>We support organizations with professional travel and event solutions that save time and reduce costs.</p>
+        <ul>
+          <li><i class="bi bi-check"></i> <span>Corporate travel management and logistics support</span></li>
+          <li><i class="bi bi-check"></i><span> Event coordination, conferences, and workshop arrangements</span></li>
+          <li><i class="bi bi-check"></i> <span>Tailored solutions for NGOs, SMEs, and corporate organizations</span></li>
+        </ul>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+        <img src="assets/img/general.jpeg" class="img-fluid" alt="General Support Services">
+      </div>
+      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+        <h3>General Support Services</h3>
+        <p class="fst-italic">
+          Reliable back-office and support services to keep your business and travel plans running smoothly.
+        </p>
+        <p>
+          We offer customer support, documentation assistance, and business partnership networking to help you stay focused on growth while we handle the details.
+        </p>
+      </div>
+    </div><!-- Features Item -->
 
   </div>
 
-</section><!-- /Skills Section -->
+  </section><!-- /Features Section -->
+
+      <!-- Why Us Section -->
+  <section id="why-us" class="why-us section">
+
+    <div class="container">
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+          <span>01</span>
+          <h4>Professional & Experienced Team</h4>
+          <p>Our team combines industry expertise in travel, tourism, and business consultancy to deliver reliable, high-quality service every time.</p>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="200">
+          <span>02</span>
+          <h4>Affordable & Reliable Services</h4>
+          <p>We provide cost-effective solutions without compromising on quality, ensuring you get real value for your investment.</p>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="300">
+          <span>03</span>
+          <h4>Customer-Centered Approach</h4>
+          <p>Your satisfaction comes first. We tailor our travel and business solutions to fit your specific needs and goals.</p>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="400">
+          <span>04</span>
+          <h4>Timely Service Delivery</h4>
+          <p>We respect your time. From bookings to documentation, we ensure fast processing and on-time delivery of all services.</p>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="500">
+          <span>05</span>
+          <h4>Strong Business Networks</h4>
+          <p>Our partnerships across Uganda, East Africa, and internationally give you access to better deals and wider opportunities.</p>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="600">
+          <span>06</span>
+          <h4>Innovative Solutions</h4>
+          <p>We embrace modern tools and creative strategies to make travel and entrepreneurship simpler, smarter, and more effective.</p>
+        </div><!-- End Card Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Why Us Section -->
 
     <!-- Services Section -->
-<section id="services" class="services section light-background">
+<section id="services" class="services section">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Our Services</h2>
-    <p>At Logic Tech Innovationz, we provide cutting-edge technology solutions designed to help businesses grow, improve efficiency, and stay ahead in the digital era.</p>
+    <p>Reliable, innovative, and affordable solutions for travel and business growth</p>
   </div><!-- End Section Title -->
 
   <div class="container">
 
     <div class="row gy-4">
 
-      <!-- Web Development -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-code-slash icon"></i></div>
-          <h4><a href="#" class="stretched-link">Web Development</a></h4>
-          <p>We design and develop responsive, modern websites and web applications that enhance your online presence and user experience.</p>
+          <div class="icon">
+            <i class="bi bi-airplane"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Travel & Tourism</h3>
+          </a>
+          <p>Air ticket reservations, hotel bookings, tour packages, visa guidance, airport transfers, car hire, and holiday planning across Uganda and beyond.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <!-- System Design -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-diagram-3 icon"></i></div>
-          <h4><a href="#" class="stretched-link">System Design & Development</a></h4>
-          <p>We build custom systems such as management systems, dashboards, and enterprise solutions tailored to your business needs.</p>
+          <div class="icon">
+            <i class="bi bi-briefcase"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Business Consultancy</h3>
+          </a>
+          <p>Startup support, business registration guidance, consultancy, project management, and investment networking for entrepreneurs and SMEs.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <!-- CCTV Installation -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-camera-video icon"></i></div>
-          <h4><a href="#" class="stretched-link">Camera Installation</a></h4>
-          <p>We provide professional CCTV camera installation services to improve security and monitor your business or property effectively.</p>
+          <div class="icon">
+            <i class="bi bi-megaphone"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Branding & Marketing</h3>
+          </a>
+          <p>Branding, marketing support, and entrepreneurship training to help your business stand out and attract the right clients.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <!-- GPS Tracking -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-geo-alt icon"></i></div>
-          <h4><a href="#" class="stretched-link">GPS Tracking</a></h4>
-          <p>Track and manage your vehicles or assets in real-time with our reliable GPS tracking solutions for improved control and safety.</p>
+          <div class="icon">
+            <i class="bi bi-building"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Corporate Services</h3>
+          </a>
+          <p>Corporate travel management, event coordination, conference and workshop arrangements, and business logistics support.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <!-- IT Support -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-tools icon"></i></div>
-          <h4><a href="#" class="stretched-link">IT Support & Maintenance</a></h4>
-          <p>We offer continuous technical support, system maintenance, and troubleshooting to ensure smooth business operations.</p>
+          <div class="icon">
+            <i class="bi bi-file-earmark-text"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Documentation & Support</h3>
+          </a>
+          <p>Customer support services, documentation assistance, and business partnership networking to keep your operations running smoothly.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <!-- Digital Marketing -->
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-megaphone icon"></i></div>
-          <h4><a href="#" class="stretched-link">Digital Marketing</a></h4>
-          <p>Grow your brand online with our digital marketing services including social media management, SEO, and online advertising.</p>
+          <div class="icon">
+            <i class="bi bi-globe"></i>
+          </div>
+          <a href="#contact" class="stretched-link">
+            <h3>Digital Solutions</h3>
+          </a>
+          <p>Introducing digital travel and business solutions to help you expand across East Africa and connect with international markets.</p>
         </div>
       </div><!-- End Service Item -->
-
-      <!-- Computer Sales -->
-            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="700">
-            <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-laptop icon"></i></div>
-                <h4><a href="#" class="stretched-link">Computer Sales</a></h4>
-                <p>
-                We supply high-quality laptops, desktops, accessories, and IT equipment 
-                from trusted brands to meet your personal and business needs.
-                </p>
-            </div>
-            </div><!-- End Service Item -->
-
-            <!-- Network Engineering -->
-            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="800">
-            <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-hdd-network icon"></i></div>
-                <h4><a href="#" class="stretched-link">Network Engineering</a></h4>
-                <p>
-                We design, install, and maintain secure and efficient network infrastructures 
-                including LAN, WAN, Wi-Fi setups, and server configurations.
-                </p>
-            </div>
-            </div><!-- End Service Item -->
 
     </div>
 
@@ -404,309 +315,164 @@
 
 </section><!-- /Services Section -->
 
-   <!-- Work Process Section -->
-<section id="work-process" class="work-process section">
+    <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio section">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Our Work Process</h2>
-    <p>We follow a structured and professional approach to ensure every project is delivered efficiently, meets client expectations, and achieves the desired results.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row gy-5">
-
-      <!-- Step 1 -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="steps-item">
-          <div class="steps-image">
-            <img src="assets/img/steps/steps-1.webp" alt="Consultation" class="img-fluid" loading="lazy">
-          </div>
-          <div class="steps-content">
-            <div class="steps-number">01</div>
-            <h3>Consultation & Requirements</h3>
-            <p>We begin by understanding your business needs, goals, and challenges to determine the best technology solution for you.</p>
-            <div class="steps-features">
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Client Meetings</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Requirement Gathering</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Project Scope Definition</span>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Steps Item -->
-      </div>
-
-      <!-- Step 2 -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="steps-item">
-          <div class="steps-image">
-            <img src="assets/img/steps/steps-2.webp" alt="Planning" class="img-fluid" loading="lazy">
-          </div>
-          <div class="steps-content">
-            <div class="steps-number">02</div>
-            <h3>Planning & Design</h3>
-            <p>We design system architecture, UI/UX layouts, and technical plans to ensure a smooth and scalable solution.</p>
-            <div class="steps-features">
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>System Architecture</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>UI/UX Design</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Technical Planning</span>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Steps Item -->
-      </div>
-
-      <!-- Step 3 -->
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="steps-item">
-          <div class="steps-image">
-            <img src="assets/img/steps/steps-3.webp" alt="Implementation" class="img-fluid" loading="lazy">
-          </div>
-          <div class="steps-content">
-            <div class="steps-number">03</div>
-            <h3>Implementation & Deployment</h3>
-            <p>We develop, install, test, and deploy your solution—ensuring everything works perfectly before going live.</p>
-            <div class="steps-features">
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Development & Installation</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Testing & Quality Assurance</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle"></i>
-                <span>Deployment & Go Live</span>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Steps Item -->
-      </div>
-
-    </div>
-
-  </div>
-
-</section><!-- /Work Process Section -->
-
-    <!-- Call To Action Section -->
-<section id="call-to-action" class="call-to-action section dark-background">
-
-  <img src="assets/img/bg/bg-8.webp" alt="Logic Tech Innovationz CTA Background">
-
-  <div class="container">
-
-    <div class="row" data-aos="zoom-in" data-aos-delay="100">
-      
-      <div class="col-xl-9 text-center text-xl-start">
-        <h3>Ready to Transform Your Business with Technology?</h3>
-        <p>
-          At Logic Tech Innovationz, we help businesses grow through professional web development, custom systems, CCTV installation, GPS tracking, IT support, and digital marketing. 
-          Get in touch with us today and let’s turn your idea into a powerful digital solution.
-        </p>
-      </div>
-
-      <div class="col-xl-3 cta-btn-container text-center">
-        <a class="cta-btn align-middle" href="#contact">Get Started</a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section><!-- /Call To Action Section -->
-
-    
-    <!-- Team Section -->
-<section id="team" class="team section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Our Team</h2>
-    <p>Our skilled and dedicated team works together to deliver innovative technology solutions that meet client needs and exceed expectations.</p>
+    <h2>Our Work</h2>
+    <p>Selected projects and client solutions delivered across Uganda and East Africa</p>
   </div><!-- End Section Title -->
 
   <div class="container">
 
-    <div class="row gy-4">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-      <!-- CEO -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="team-member d-flex align-items-start">
-          <div class="pic">
-            <img src="{{asset('assets/img/derrick.jpeg')}}" class="img-fluid" alt="CEO">
-          </div>
-          <div class="member-info">
-            <h4>Ainembabazi Derrick</h4>
-            <span>Chief Executive Officer</span>
-            <p>Leads the company vision, strategy, and ensures delivery of high-quality technology solutions to clients.</p>
-            <div class="social">
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-app">Travel & Tourism</li>
+        <li data-filter=".filter-product">Business Services</li>
+        <li data-filter=".filter-branding">Corporate & Events</li>
+        <li data-filter=".filter-books">Branding & Marketing</li>
+      </ul><!-- End Portfolio Filters -->
 
-      <!-- CTO / Developer -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="team-member d-flex align-items-start">
-          <div class="pic">
-            <img src="assets/img/person/cto.webp" class="img-fluid" alt="CTO">
-          </div>
-          <div class="member-info">
-            <h4>Kemigisha Prenela</h4>
-            <span>Secretary </span>
-            <p>
-                Responsible for managing administrative tasks, coordinating communication within the team, 
-                organizing meetings, maintaining records, and ensuring smooth day-to-day operations of the organization.
-            </p>
-            <div class="social">
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-github"></i></a>
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-      <!-- Systems Engineer -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="team-member d-flex align-items-start">
-          <div class="pic">
-            <img src="assets/img/person/dev.webp" class="img-fluid" alt="Developer">
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Uganda Safari Tour">
+          <div class="portfolio-info">
+            <h4>Uganda Safari Tour Package</h4>
+            <p>Custom tour planning, hotel bookings, and airport transfers for international clients</p>
+            <a href="assets/img/portfolio/app-1.jpg" title="Uganda Safari Tour Package" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
           </div>
-          <div class="member-info">
-            <h4>Mugerwa Frank</h4>
-            <span>Full Stack Developer</span>
-            <p>Responsible for building web applications, management systems, and integrating backend and frontend functionalities.</p>
-            <div class="social">
-              <a href="#"><i class="bi bi-github"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-              <a href="#"><i class="bi bi-twitter-x"></i></a>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
+        </div><!-- End Portfolio Item -->
 
-      <!-- IT Support / Field Technician -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="team-member d-flex align-items-start">
-          <div class="pic">
-            <img src="assets/img/deus.jpeg" class="img-fluid" alt="Support">
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="Startup Registration">
+          <div class="portfolio-info">
+            <h4>Business Registration Support</h4>
+            <p>End-to-end startup registration and consultancy for SMEs in Kampala</p>
+            <a href="assets/img/portfolio/product-1.jpg" title="Business Registration Support" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
           </div>
-          <div class="member-info">
-            <h4>Mweteise Deus</h4>
-            <span>IT Support & Field Technician</span>
-            <p>Handles CCTV installations, GPS tracking setup, troubleshooting, and provides on-site and remote technical support.</p>
-            <div class="social">
-              <a href="#"><i class="bi bi-whatsapp"></i></a>
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
-            </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+          <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="Corporate Event">
+          <div class="portfolio-info">
+            <h4>Corporate Workshop Coordination</h4>
+            <p>Event planning, logistics, and conference arrangements for NGOs and corporates</p>
+            <a href="assets/img/portfolio/branding-1.jpg" title="Corporate Workshop Coordination" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
           </div>
-        </div>
-      </div><!-- End Team Member -->
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+          <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="Brand Identity">
+          <div class="portfolio-info">
+            <h4>Brand Identity & Marketing</h4>
+            <p>Branding, marketing strategy, and promotional materials for local businesses</p>
+            <a href="assets/img/portfolio/books-1.jpg" title="Brand Identity & Marketing" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="Flight Booking">
+          <div class="portfolio-info">
+            <h4>Corporate Travel Management</h4>
+            <p>Air ticket reservations and hotel bookings for corporate clients</p>
+            <a href="assets/img/portfolio/app-2.jpg" title="Corporate Travel Management" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="Entrepreneurship Training">
+          <div class="portfolio-info">
+            <h4>Entrepreneurship Training Program</h4>
+            <p>Training and mentorship for youth entrepreneurs and startups</p>
+            <a href="assets/img/portfolio/product-2.jpg" title="Entrepreneurship Training Program" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+          <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="Business Logistics">
+          <div class="portfolio-info">
+            <h4>Business Logistics Support</h4>
+            <p>Documentation assistance and logistics coordination for SMEs</p>
+            <a href="assets/img/portfolio/branding-2.jpg" title="Business Logistics Support" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+          <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="Marketing Campaign">
+          <div class="portfolio-info">
+            <h4>Marketing Campaign Support</h4>
+            <p>Digital and offline marketing support for small businesses</p>
+            <a href="assets/img/portfolio/books-2.jpg" title="Marketing Campaign Support" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+          <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="Holiday Planning">
+          <div class="portfolio-info">
+            <h4>Holiday & Tour Planning</h4>
+            <p>Complete holiday planning and tour packages within East Africa</p>
+            <a href="assets/img/portfolio/app-3.jpg" title="Holiday & Tour Planning" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="Project Management">
+          <div class="portfolio-info">
+            <h4>Project Management Support</h4>
+            <p>Project planning and management for business growth initiatives</p>
+            <a href="assets/img/portfolio/product-3.jpg" title="Project Management Support" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+          <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="Event Coordination">
+          <div class="portfolio-info">
+            <h4>Conference & Event Coordination</h4>
+            <p>Full-service event coordination and management solutions</p>
+            <a href="assets/img/portfolio/branding-3.jpg" title="Conference & Event Coordination" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+          <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="Business Networking">
+          <div class="portfolio-info">
+            <h4>Business Partnerships & Networking</h4>
+            <p>Connecting clients with partners and investment opportunities</p>
+            <a href="assets/img/portfolio/books-3.jpg" title="Business Partnerships & Networking" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+            <a href="#contact" title="Inquire About This Service" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          </div>
+        </div><!-- End Portfolio Item -->
+
+      </div><!-- End Portfolio Container -->
 
     </div>
 
   </div>
 
-</section><!-- /Team Section -->
-
-    <!-- Pricing Section -->
-<section id="pricing" class="pricing section light-background">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Our Pricing</h2>
-    <p>We offer flexible and affordable pricing packages tailored to meet the needs of startups, small businesses, and large enterprises.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container">
-
-    <div class="row gy-4">
-
-      <!-- Starter Package -->
-      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="pricing-item">
-          <h3>Starter Package</h3>
-          <h4><sup>UGX</sup>530,000+</h4>
-          <ul>
-            <li><i class="bi bi-check"></i> <span>Basic Business Website</span></li>
-            <li><i class="bi bi-check"></i> <span>Responsive Design</span></li>
-            <li><i class="bi bi-check"></i> <span>Contact Form Integration</span></li>
-            <li><i class="bi bi-check"></i> <span>Basic SEO Setup</span></li>
-            <li class="na"><i class="bi bi-x"></i> <span>Advanced System Features</span></li>
-          </ul>
-          <a href="#contact" class="buy-btn">Get Started</a>
-        </div>
-      </div><!-- End Pricing Item -->
-
-      <!-- Business Package -->
-      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="pricing-item featured">
-          <h3>Business Package</h3>
-          <h4><sup>UGX</sup>1,700,000+</h4>
-          <ul>
-            <li><i class="bi bi-check"></i> <span>Custom Website / Web Application</span></li>
-            <li><i class="bi bi-check"></i> <span>Admin Dashboard</span></li>
-            <li><i class="bi bi-check"></i> <span>Database Integration</span></li>
-            <li><i class="bi bi-check"></i> <span>API Integration</span></li>
-            <li><i class="bi bi-check"></i> <span>Basic Support & Maintenance</span></li>
-          </ul>
-          <a href="#contact" class="buy-btn">Get Started</a>
-        </div>
-      </div><!-- End Pricing Item -->
-
-      <!-- Advanced Solutions Package -->
-      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-        <div class="pricing-item">
-          <h3>Advanced Solutions</h3>
-          <h4><sup>UGX</sup>2,600,000+</h4>
-          <ul>
-            <li><i class="bi bi-check"></i> <span>Custom Enterprise Systems</span></li>
-            <li><i class="bi bi-check"></i> <span>CCTV Installation Setup</span></li>
-            <li><i class="bi bi-check"></i> <span>GPS Tracking Integration</span></li>
-            <li><i class="bi bi-check"></i> <span>Advanced Security Features</span></li>
-            <li><i class="bi bi-check"></i> <span>Priority IT Support & Maintenance</span></li>
-          </ul>
-          <a href="#contact" class="buy-btn">Get Started</a>
-        </div>
-      </div><!-- End Pricing Item -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Pricing Section -->
+</section><!-- /Portfolio Section -->
 
     <!-- Testimonials Section -->
-<section id="testimonials" class="testimonials section">
+<section id="testimonials" class="testimonials section light-background">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Testimonials</h2>
-    <p>What our clients say about Logic Tech Innovationz and our commitment to delivering reliable and innovative technology solutions.</p>
+    <p>What our clients say about working with GUMA ENT AND TRAVEL LTD</p>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -724,94 +490,87 @@
             "el": ".swiper-pagination",
             "type": "bullets",
             "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 40
+            },
+            "1200": {
+              "slidesPerView": 3,
+              "spaceBetween": 1
+            }
           }
         }
       </script>
-
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/person/person-m-9.webp" class="testimonial-img" alt="">
-            <h3>Michael K.</h3>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>GUMA ENT AND TRAVEL LTD made our corporate travel seamless. From flights to hotel bookings, everything was handled professionally and on time. Highly recommend their team.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <h3>James Okello</h3>
+            <h4>Operations Manager</h4>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Thanks to their business consultancy support, we were able to register our startup and launch in under 2 weeks. The guidance was clear, affordable, and practical.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <h3>Sarah Nakato</h3>
             <h4>Startup Founder</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              <span>Logic Tech Innovationz helped us build a scalable web platform that perfectly fits our business needs. Their team is professional, responsive, and highly skilled.</span>
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
           </div>
-        </div>
+        </div><!-- End testimonial item -->
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/person/person-f-5.webp" class="testimonial-img" alt="">
-            <h3>Sarah W.</h3>
-            <h4>UI/UX Designer</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
             <p>
               <i class="bi bi-quote quote-icon-left"></i>
-              <span>The team delivered a clean and modern interface for our application. Their attention to detail and user experience is outstanding.</span>
+              <span>We hired them for our NGO workshop coordination in Kampala. The event ran smoothly with excellent logistics and support. A reliable partner for corporate events.</span>
               <i class="bi bi-quote quote-icon-right"></i>
             </p>
+            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+            <h3>David Mugisha</h3>
+            <h4>Program Coordinator</h4>
           </div>
-        </div>
+        </div><!-- End testimonial item -->
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/person/person-f-12.webp" class="testimonial-img" alt="">
-            <h3>Jennifer K.</h3>
-            <h4>Business Owner</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
             <p>
               <i class="bi bi-quote quote-icon-left"></i>
-              <span>From consultation to deployment, Logic Tech Innovationz guided us through every step. Their solutions improved our operations significantly.</span>
+              <span>The tour package they arranged for our international guests was outstanding. Professional drivers, great hotels, and clear communication throughout the trip.</span>
               <i class="bi bi-quote quote-icon-right"></i>
             </p>
+            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+            <h3>Grace Achieng</h3>
+            <h4>Tourist</h4>
           </div>
-        </div>
+        </div><!-- End testimonial item -->
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/person/person-m-12.webp" class="testimonial-img" alt="">
-            <h3>David M.</h3>
-            <h4>Software Developer</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
             <p>
               <i class="bi bi-quote quote-icon-left"></i>
-              <span>Working with Logic Tech Innovationz was seamless. Their APIs and system architecture are well designed and easy to integrate.</span>
+              <span>Their branding and marketing support helped our small business gain visibility and attract more customers. Innovative ideas and great customer service.</span>
               <i class="bi bi-quote quote-icon-right"></i>
             </p>
+            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+            <h3>Brian Ssebaggala</h3>
+            <h4>SME Owner</h4>
           </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/person/person-m-13.webp" class="testimonial-img" alt="">
-            <h3>Brian T.</h3>
-            <h4>Entrepreneur</h4>
-            <div class="stars">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
-              <span>They transformed our idea into a fully functional product. Highly recommend Logic Tech Innovationz for any tech project.</span>
-              <i class="bi bi-quote quote-icon-right"></i>
-            </p>
-          </div>
-        </div>
+        </div><!-- End testimonial item -->
 
       </div>
-
       <div class="swiper-pagination"></div>
     </div>
 
@@ -819,67 +578,154 @@
 
 </section><!-- /Testimonials Section -->
 
-    <!-- FAQ Section -->
-<section id="faq-2" class="faq-2 section light-background">
+    <!-- Team Section -->
+<section id="team" class="team section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Team</h2>
+    <p>Meet the professionals driving travel, business, and innovation at GUMA ENT AND TRAVEL LTD</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-member d-flex align-items-start">
+          <div class="pic"><img src="assets/img/about2.jpeg" class="img-fluid" alt="Managing Director"></div>
+          <div class="member-info">
+            <h4>Guma Derrick</h4>
+            <span>Managing Director & Founder</span>
+            <p>Leads company strategy with a focus on entrepreneurship, tourism, and client partnerships across East Africa.</p>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-member d-flex align-items-start">
+          <div class="pic"><img src="assets/img/corporate.jpeg" class="img-fluid" alt="Travel & Operations Manager"></div>
+          <div class="member-info">
+            <h4>Sarah Namugga</h4>
+            <span>Travel & Operations Manager</span>
+            <p>Manages travel bookings, tour packages, and client operations to ensure smooth and timely service delivery.</p>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-member d-flex align-items-start">
+          <div class="pic"><img src="assets/img/ezra.jpeg" class="img-fluid" alt="Business Consultant"></div>
+          <div class="member-info">
+            <h4>William Kato</h4>
+            <span>Business Consultant</span>
+            <p>Provides startup support, business registration guidance, and consultancy for SMEs and entrepreneurs.</p>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="team-member d-flex align-items-start">
+          <div class="pic"><img src="assets/img/ama.jpeg" class="img-fluid" alt="Finance & Admin Officer"></div>
+          <div class="member-info">
+            <h4>Amanda Nansubuga</h4>
+            <span>Finance & Admin Officer</span>
+            <p>Oversees financial management, documentation, and administrative support to keep operations running smoothly.</p>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Team Member -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Team Section -->
+
+    <!-- Faq Section -->
+<section id="faq" class="faq section">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Frequently Asked Questions</h2>
-    <p>Find answers to common questions about Logic Tech Innovationz, our services, development process, and support.</p>
+    <p>Find quick answers to common questions about our travel and business services</p>
   </div><!-- End Section Title -->
 
   <div class="container">
 
     <div class="row justify-content-center">
 
-      <div class="col-lg-10">
+      <div class="col-lg-8">
 
         <div class="faq-container">
 
           <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
-            <i class="faq-icon bi bi-question-circle"></i>
-            <h3>What services does Logic Tech Innovationz offer?</h3>
+            <i class="faq-icon bi-question-circle"></i>
+            <h3>What services does GUMA ENT AND TRAVEL LTD offer?</h3>
             <div class="faq-content">
-              <p>We offer web development, mobile app development, software solutions, system integration, IT consulting, and custom enterprise applications tailored to your business needs.</p>
+              <p>We provide travel and tourism services like flight bookings, hotel reservations, tour packages, visa guidance, and corporate travel management. We also offer business consultancy, startup support, business registration, branding, marketing, and event coordination across Uganda and East Africa.</p>
             </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
+            <i class="faq-toggle bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
           <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-            <i class="faq-icon bi bi-question-circle"></i>
-            <h3>Do you build custom software solutions?</h3>
+            <i class="faq-icon bi-question-circle"></i>
+            <h3>Do you handle both local and international travel bookings?</h3>
             <div class="faq-content">
-              <p>Yes. We specialize in building custom software solutions designed specifically for your business processes, ensuring scalability, security, and performance.</p>
+              <p>Yes. We handle air ticket reservations, hotel bookings, and tour packages for both local destinations in Uganda and international travel. We also provide visa guidance and travel insurance assistance.</p>
             </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
+            <i class="faq-toggle bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
           <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-            <i class="faq-icon bi bi-question-circle"></i>
-            <h3>How long does it take to complete a project?</h3>
+            <i class="faq-icon bi-question-circle"></i>
+            <h3>Can you help with starting and registering a business in Uganda?</h3>
             <div class="faq-content">
-              <p>Project timelines vary depending on complexity. Small projects may take a few weeks, while larger enterprise systems can take several months. We provide timelines after requirement analysis.</p>
+              <p>Absolutely. We offer startup support services, business registration guidance, and consultancy to help entrepreneurs and SMEs set up and grow their businesses efficiently and legally.</p>
             </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
+            <i class="faq-toggle bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
           <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-            <i class="faq-icon bi bi-question-circle"></i>
-            <h3>Do you provide support and maintenance after delivery?</h3>
+            <i class="faq-icon bi-question-circle"></i>
+            <h3>Do you organize corporate events and workshops?</h3>
             <div class="faq-content">
-              <p>Yes. We offer ongoing support, maintenance, updates, and bug fixes to ensure your system continues to run smoothly after deployment.</p>
+              <p>Yes. Our corporate services include event coordination, conference and workshop arrangements, business logistics support, and full travel management for corporate clients and NGOs.</p>
             </div>
-            <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
+            <i class="faq-toggle bi-chevron-right"></i>
+          </div><!-- End Faq item-->
 
           <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
-            <i class="faq-icon bi bi-question-circle"></i>
-            <h3>Can you integrate systems with existing platforms?</h3>
+            <i class="faq-icon bi-question-circle"></i>
+            <h3>How do I get a quote or book a service?</h3>
             <div class="faq-content">
-              <p>Absolutely. We provide API development and third-party integrations to ensure your systems communicate effectively with other platforms and services.</p>
+              <p>You can contact us directly through our phone, email, or the contact form on this website. Our team will respond promptly with a tailored quote and next steps based on your needs.</p>
             </div>
             <i class="faq-toggle bi bi-chevron-right"></i>
-          </div>
+          </div><!-- End Faq item-->
 
         </div>
 
@@ -889,131 +735,91 @@
 
   </div>
 
-</section><!-- /FAQ Section -->
-
-    <!-- Subscribe Section -->
-<section id="subscribe" class="subscribe section">
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4 justify-content-between align-items-center">
-
-      <div class="col-lg-6">
-        <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
-          <h2>Stay Updated with Logic Tech Innovationz</h2>
-          <p>
-            Subscribe to our newsletter to receive the latest updates on software solutions, technology trends, product releases, and industry insights from Logic Tech Innovationz.
-          </p>
-
-          <form action="forms/newsletter.php" method="post" class="php-email-form cta-form" data-aos="fade-up" data-aos-delay="300">
-            <div class="input-group mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Enter your email address..." aria-label="Email address" required>
-              <button class="btn btn-primary" type="submit" id="button-subscribe">Subscribe</button>
-            </div>
-
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Thank you for subscribing! You'll now receive updates from Logic Tech Innovationz.</div>
-          </form>
-
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="cta-image" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/cta/camera.jpeg" alt="Newsletter subscription" class="img-fluid">
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</section><!-- /Subscribe Section -->
-  
+</section><!-- /Faq Section -->
 
     <!-- Contact Section -->
-<section id="contact" class="contact section">
+<section id="contact" class="contact section light-background">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Contact Us</h2>
-    <p>Get in touch with Logic Tech Innovationz for software development, IT solutions, consultations, and technical support.</p>
+    <p>Get in touch for travel bookings, business consultancy, and partnership inquiries</p>
   </div><!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade" data-aos-delay="100">
 
     <div class="row gy-4">
 
-      <div class="col-lg-5">
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Kampala, Uganda</p>
+          </div>
+        </div><!-- End Info Item -->
 
-        <div class="info-wrap">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+256 743 600987</p>
+          </div>
+        </div><!-- End Info Item -->
 
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h3>Address</h3>
-              <p>Kanyanya, Kampala, Uganda</p>
-            </div>
-          </div><!-- End Info Item -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info@gumaentandtravel.com</p>
+          </div>
+        </div><!-- End Info Item -->
 
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-telephone flex-shrink-0"></i>
-            <div>
-              <h3>Call Us</h3>
-              <p>+256 703 996 251</p>
-            </div>
-          </div><!-- End Info Item -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-share flex-shrink-0"></i>
+          <div>
+            <h3>Follow Us</h3>
+            <p>
+              <a href="#" target="_blank">Facebook</a> | 
+              <a href="#" target="_blank">Instagram</a> | 
+              <a href="#" target="_blank">LinkedIn</a> | 
+              <a href="#" target="_blank">TikTok</a>
+            </p>
+          </div>
+        </div><!-- End Info Item -->
 
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <i class="bi bi-envelope flex-shrink-0"></i>
-            <div>
-              <h3>Email Us</h3>
-              <p>info@logictechinnovationz.com</p>
-            </div>
-          </div><!-- End Info Item -->          
-
-        </div>
       </div>
 
-      <div class="col-lg-7">
-
-        <form action="admin/messages/add" method="post"  data-aos="fade-up" data-aos-delay="200">
-              @csrf
+      <div class="col-lg-8">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <label for="name-field" class="pb-2">Your Name</label>
-              <input type="text" name="name" id="name-field" class="form-control" required>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
             </div>
 
             <div class="col-md-6">
-              <label for="email-field" class="pb-2">Your Email</label>
-              <input type="email" name="email" id="email-field" class="form-control" required>
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
             </div>
 
             <div class="col-md-12">
-              <label for="phone-field" class="pb-2">Phone</label>
-              <input type="text" name="phone" id="phone-field" class="form-control" required>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
             </div>
 
             <div class="col-md-12">
-              <label for="subject-field" class="pb-2">Subject</label>
-              <input type="text" name="subject" id="subject-field" class="form-control" required>
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
             </div>
 
-            <div class="col-md-12">
-              <label for="message-field" class="pb-2">Message</label>
-              <textarea name="message" id="message-field" rows="10" class="form-control" required></textarea>
-            </div>
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
 
-            <div class="col-md-12 text-center">              
-
-              <button type="submit" class="btn btn-primary">Send Message</button>
+              <button type="submit">Send Message</button>
             </div>
 
           </div>
-
         </form>
-
       </div><!-- End Contact Form -->
 
     </div>
@@ -1021,7 +827,6 @@
   </div>
 
 </section><!-- /Contact Section -->
-
   </main>
-
 @endsection
+ 
