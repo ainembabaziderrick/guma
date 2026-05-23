@@ -26,6 +26,8 @@ use App\Http\Controllers\{
     BlogController,
     CarouselController,
     CartController,
+    EmployerController,
+    AgentController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -118,6 +120,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::group(['middleware' => 'level:1,5'], function () {
+
+        //Employers
+        Route::get('/employers/data', [EmployerController::class, 'data'])->name('employers.data');
+        Route::delete('/employers/delete-selected', [EmployerController::class, 'deleteSelected'])->name('employers.delete_selected');
+        Route::resource('/employers', EmployerController::class);
+
+        //Agents
+        Route::get('/agents/data', [AgentController::class, 'data'])->name('agents.data');
+        Route::delete('/agents/delete-selected', [AgentController::class, 'deleteSelected'])->name('agents.delete_selected');
+        Route::resource('/agents', AgentController::class);
+
+
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');
         Route::resource('/kategori', KategoriController::class);
 
