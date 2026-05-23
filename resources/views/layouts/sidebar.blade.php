@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('job-orders.index') }}">
                     <i class="fa fa-briefcase"></i> <span>Job Orders</span>
                 </a>
             </li>
