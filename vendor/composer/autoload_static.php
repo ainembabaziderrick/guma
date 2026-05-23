@@ -646,6 +646,7 @@ class ComposerStaticInit6a65194e90853bfca7a60b5ce946a15b
         'App\\Http\\Controllers\\DebtsController' => __DIR__ . '/../..' . '/app/Http/Controllers/DebtsController.php',
         'App\\Http\\Controllers\\EmployerController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployerController.php',
         'App\\Http\\Controllers\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\JobOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/JobOrderController.php',
         'App\\Http\\Controllers\\KategoriController' => __DIR__ . '/../..' . '/app/Http/Controllers/KategoriController.php',
         'App\\Http\\Controllers\\LaporanController' => __DIR__ . '/../..' . '/app/Http/Controllers/LaporanController.php',
         'App\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemberController.php',

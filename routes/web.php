@@ -29,6 +29,7 @@ use App\Http\Controllers\{
     EmployerController,
     AgentController,
     JobOrderController,
+    CandidateController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -136,6 +137,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/job-orders/data', [JobOrderController::class, 'data'])->name('job_orders.data');
         Route::delete('/job-orders/delete-selected', [JobOrderController::class, 'deleteSelected'])->name('job_orders.delete_selected');
         Route::resource('/job-orders', JobOrderController::class);
+
+        //Candidates
+        Route::get('/candidates/data', [CandidateController::class, 'data'])->name('candidates.data');
+        Route::delete('/candidates/delete-selected', [CandidateController::class, 'deleteSelected'])->name('candidates.delete_selected');
+        Route::resource('/candidates', CandidateController::class);
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

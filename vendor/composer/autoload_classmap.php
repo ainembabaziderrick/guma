@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\DebtsController' => $baseDir . '/app/Http/Controllers/DebtsController.php',
     'App\\Http\\Controllers\\EmployerController' => $baseDir . '/app/Http/Controllers/EmployerController.php',
     'App\\Http\\Controllers\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/ForgotPasswordController.php',
+    'App\\Http\\Controllers\\JobOrderController' => $baseDir . '/app/Http/Controllers/JobOrderController.php',
     'App\\Http\\Controllers\\KategoriController' => $baseDir . '/app/Http/Controllers/KategoriController.php',
     'App\\Http\\Controllers\\LaporanController' => $baseDir . '/app/Http/Controllers/LaporanController.php',
     'App\\Http\\Controllers\\MemberController' => $baseDir . '/app/Http/Controllers/MemberController.php',

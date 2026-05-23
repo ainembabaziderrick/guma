@@ -39,10 +39,10 @@
 
             <li class="header">RECRUITMENT</li>
             <li>
-                <a href="">
+                <a href="{{ route('candidates.index') }}">
                     <i class="fa fa-users"></i> <span>Candidates</span>
-                    @if(isset($pendingCandidatesCount) && $pendingCandidatesCount > 0)
-                        <span class="badge badge-danger">{{ $pendingCandidatesCount }}</span>
+                    @if($pendingCandidatesCount > 0)
+                        <span class="badge bg-red">{{ $pendingCandidatesCount }}</span>
                     @endif
                 </a>
             </li>
@@ -120,12 +120,12 @@
 
             <li class="header">SYSTEM</li>
             <li>
-                <a href="">
-                    <i class="fa fa-users"></i> <span>Users & Roles</span>
+                <a href="{{ route('user.index') }}">
+                    <i class="fa fa-users"></i> <span>Users</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('setting.index') }}">
                     <i class="fa fa-cogs"></i> <span>Settings</span>
                 </a>
             </li>

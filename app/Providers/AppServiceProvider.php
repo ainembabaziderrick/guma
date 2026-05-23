@@ -6,6 +6,7 @@ use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Debtors;
+use App\Models\Candidate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -45,6 +46,10 @@ class AppServiceProvider extends ServiceProvider
         // share both with all views
         $view->with('cart_count', $cart_count)
              ->with('pendingDebtorsCount', $pendingDebtorsCount);
+
+        View::composer('*', function ($view) {
+        $view->with('pendingCandidatesCount', Candidate::pending()->count());
+    });
     });
 }
 
