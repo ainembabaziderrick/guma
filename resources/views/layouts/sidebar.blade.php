@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('screening.index') }}">
                     <i class="fa fa-check-square-o"></i> <span>Screening & Shortlist</span>
                 </a>
             </li>
