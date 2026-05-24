@@ -74,7 +74,7 @@
 
             <li class="header">DEPLOYMENT</li>
             <li>
-                <a href="">
+                <a href="{{ route('contract.index') }}">
                     <i class="fa fa-file-text-o"></i> <span>Contracts</span>
                 </a>
             </li>
