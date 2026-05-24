@@ -91,7 +91,7 @@
 
             <li class="header">FINANCE</li>
             <li>
-                <a href="">
+                <a href="{{ route('payment.index') }}">
                     <i class="fa fa-money"></i> <span>Payments</span>
                 </a>
             </li>

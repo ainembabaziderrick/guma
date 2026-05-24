@@ -37,6 +37,7 @@ use App\Http\Controllers\{
     ContractController,
     DeploymentController,
     PostDeploymentController,
+    PaymentController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -186,6 +187,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/post-deployment', [PostDeploymentController::class, 'index'])->name('postdeployment.index');
         Route::get('/post-deployment/data', [PostDeploymentController::class, 'data'])->name('postdeployment.data');
         Route::post('/post-deployment/update', [PostDeploymentController::class, 'update'])->name('postdeployment.update');
+
+        //Payments
+        Route::get('/payments', [PaymentController::class, 'index'])->name('payment.index');
+        Route::get('/payments/data', [PaymentController::class, 'data'])->name('payment.data');
+        Route::post('/payments/store', [PaymentController::class, 'store'])->name('payment.store');
+        Route::post('/payments/update', [PaymentController::class, 'update'])->name('payment.update');
+        Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payment.destroy');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

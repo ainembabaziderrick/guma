@@ -37,4 +37,14 @@ class Candidate extends Model
     {
         return $query->where('status', 'pending');
     }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function getTotalPaidAttribute()
+    {
+        return $this->payments()->where('status', 'paid')->sum('amount');
+    }
 }

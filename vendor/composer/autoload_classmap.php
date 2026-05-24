@@ -40,6 +40,7 @@ return array(
     'App\\Http\\Controllers\\PenjualanController' => $baseDir . '/app/Http/Controllers/PenjualanController.php',
     'App\\Http\\Controllers\\PenjualanDetailController' => $baseDir . '/app/Http/Controllers/PenjualanDetailController.php',
     'App\\Http\\Controllers\\PoliceClearanceController' => $baseDir . '/app/Http/Controllers/PoliceClearanceController.php',
+    'App\\Http\\Controllers\\PostDeploymentController' => $baseDir . '/app/Http/Controllers/PostDeploymentController.php',
     'App\\Http\\Controllers\\ProductsController' => $baseDir . '/app/Http/Controllers/ProductsController.php',
     'App\\Http\\Controllers\\ProdukController' => $baseDir . '/app/Http/Controllers/ProdukController.php',
     'App\\Http\\Controllers\\ScreeningController' => $baseDir . '/app/Http/Controllers/ScreeningController.php',
