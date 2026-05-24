@@ -38,6 +38,7 @@ use App\Http\Controllers\{
     DeploymentController,
     PostDeploymentController,
     PaymentController,
+    InvoiceController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -194,6 +195,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/payments/store', [PaymentController::class, 'store'])->name('payment.store');
         Route::post('/payments/update', [PaymentController::class, 'update'])->name('payment.update');
         Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payment.destroy');
+
+        //Invoices
+        Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoice.index');
+        Route::get('/invoices/data', [InvoiceController::class, 'data'])->name('invoice.data');
+        Route::get('/invoices/create', [InvoiceController::class, 'create'])->name('invoice.create');
+        Route::post('/invoices/store', [InvoiceController::class, 'store'])->name('invoice.store');
+        Route::get('/invoices/{id}/edit', [InvoiceController::class, 'edit'])->name('invoice.edit');
+        Route::post('/invoices/{id}/update', [InvoiceController::class, 'update'])->name('invoice.update');
+        Route::get('/invoices/{id}/print', [InvoiceController::class, 'print'])->name('invoice.print');
+        Route::delete('/invoices/{id}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

@@ -96,7 +96,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('invoice.index') }}">
                     <i class="fa fa-file-invoice-o"></i> <span>Invoices</span>
                 </a>
             </li>

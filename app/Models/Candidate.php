@@ -47,4 +47,10 @@ class Candidate extends Model
     {
         return $this->payments()->where('status', 'paid')->sum('amount');
     }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
 }
