@@ -31,6 +31,7 @@ use App\Http\Controllers\{
     JobOrderController,
     CandidateController,
     ScreeningController,
+    MedicalController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -149,6 +150,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/screening', [ScreeningController::class, 'index'])->name('screening.index');
         Route::get('/screening/data', [ScreeningController::class, 'data'])->name('screening.data');
         Route::post('/screening/update-status', [ScreeningController::class, 'updateStatus'])->name('screening.update_status');
+
+        //Medical
+        Route::get('/medical', [MedicalController::class, 'index'])->name('medical.index');
+        Route::get('/medical/data', [MedicalController::class, 'data'])->name('medical.data');
+        Route::post('/medical/update', [MedicalController::class, 'update'])->name('medical.update');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

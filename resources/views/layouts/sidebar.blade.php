@@ -54,7 +54,7 @@
 
             <li class="header">DOCUMENTATION</li>
             <li>
-                <a href="">
+                <a href="{{ route('medical.index') }}">
                     <i class="fa fa-medkit"></i> <span>Medical Exams</span>
                 </a>
             </li>
