@@ -59,7 +59,7 @@
                 </a>
             </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('police.index') }}">
                     <i class="fa fa-shield"></i> <span>Police Clearance</span>
                 </a>
             </li>

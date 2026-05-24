@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Controllers\\JobOrderController' => $baseDir . '/app/Http/Controllers/JobOrderController.php',
     'App\\Http\\Controllers\\KategoriController' => $baseDir . '/app/Http/Controllers/KategoriController.php',
     'App\\Http\\Controllers\\LaporanController' => $baseDir . '/app/Http/Controllers/LaporanController.php',
+    'App\\Http\\Controllers\\MedicalController' => $baseDir . '/app/Http/Controllers/MedicalController.php',
     'App\\Http\\Controllers\\MemberController' => $baseDir . '/app/Http/Controllers/MemberController.php',
     'App\\Http\\Controllers\\MessageController' => $baseDir . '/app/Http/Controllers/MessageController.php',
     'App\\Http\\Controllers\\PembelianController' => $baseDir . '/app/Http/Controllers/PembelianController.php',

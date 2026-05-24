@@ -650,6 +650,7 @@ class ComposerStaticInit6a65194e90853bfca7a60b5ce946a15b
         'App\\Http\\Controllers\\JobOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/JobOrderController.php',
         'App\\Http\\Controllers\\KategoriController' => __DIR__ . '/../..' . '/app/Http/Controllers/KategoriController.php',
         'App\\Http\\Controllers\\LaporanController' => __DIR__ . '/../..' . '/app/Http/Controllers/LaporanController.php',
+        'App\\Http\\Controllers\\MedicalController' => __DIR__ . '/../..' . '/app/Http/Controllers/MedicalController.php',
         'App\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/MemberController.php',
         'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\PembelianController' => __DIR__ . '/../..' . '/app/Http/Controllers/PembelianController.php',
