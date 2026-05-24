@@ -108,12 +108,12 @@
 
             <li class="header">REPORTS</li>
             <li>
-                <a href="">
+                <a href="{{ route('report.deployment') }}">
                     <i class="fa fa-bar-chart"></i> <span>Deployment Report</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('report.revenue') }}">
                     <i class="fa fa-line-chart"></i> <span>Revenue Report</span>
                 </a>
             </li>
