@@ -36,6 +36,7 @@ use App\Http\Controllers\{
     VisaProcessingController,
     ContractController,
     DeploymentController,
+    PostDeploymentController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -180,6 +181,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/deployments', [DeploymentController::class, 'index'])->name('deployment.index');
         Route::get('/deployments/data', [DeploymentController::class, 'data'])->name('deployment.data');
         Route::post('/deployments/update', [DeploymentController::class, 'update'])->name('deployment.update');
+
+        //Post-deployment follow-up
+        Route::get('/post-deployment', [PostDeploymentController::class, 'index'])->name('postdeployment.index');
+        Route::get('/post-deployment/data', [PostDeploymentController::class, 'data'])->name('postdeployment.data');
+        Route::post('/post-deployment/update', [PostDeploymentController::class, 'update'])->name('postdeployment.update');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li>
-                <a href=" ">
+                <a href="{{ route('postdeployment.index') }}">
                     <i class="fa fa-globe"></i> <span>Post Deployment</span>
                 </a>
             </li>

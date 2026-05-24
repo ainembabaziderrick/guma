@@ -18,7 +18,8 @@ class Candidate extends Model
         'police_status', 'police_date', 'police_notes',
         'visa_status', 'visa_date', 'visa_notes',
         'contract_status', 'contract_date', 'contract_file', 'contract_notes',
-        'deployment_status', 'departure_date', 'arrival_date', 'flight_number', 'destination', 'deployment_notes'
+        'deployment_status', 'departure_date', 'arrival_date', 'flight_number', 'destination', 'deployment_notes',
+        'post_deployment_status', 'probation_end_date', 'last_followup_date', 'post_deployment_notes'
     ];
 
     protected $casts = [
@@ -29,6 +30,8 @@ class Candidate extends Model
         'contract_date' => 'date:Y-m-d',
         'departure_date' => 'date:Y-m-d',
         'arrival_date' => 'date:Y-m-d',
+        'probation_end_date' => 'date:Y-m-d',
+        'last_followup_date' => 'date:Y-m-d',
     ];
     public function scopePending($query)
     {
