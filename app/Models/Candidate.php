@@ -15,13 +15,15 @@ class Candidate extends Model
         'full_name', 'email', 'phone', 'nationality', 'position_applied', 
         'status', 'date_applied', 'remarks', 
         'medical_status', 'medical_date', 'medical_notes',
-        'police_status', 'police_date', 'police_notes'
+        'police_status', 'police_date', 'police_notes',
+        'visa_status', 'visa_date', 'visa_notes'
     ];
 
     protected $casts = [
         'date_applied' => 'date:Y-m-d',
         'medical_date' => 'date:Y-m-d',
         'police_date' => 'date:Y-m-d',
+        'visa_date' => 'date:Y-m-d',
     ];
     public function scopePending($query)
     {

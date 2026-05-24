@@ -658,6 +658,7 @@ class ComposerStaticInit6a65194e90853bfca7a60b5ce946a15b
         'App\\Http\\Controllers\\PengeluaranController' => __DIR__ . '/../..' . '/app/Http/Controllers/PengeluaranController.php',
         'App\\Http\\Controllers\\PenjualanController' => __DIR__ . '/../..' . '/app/Http/Controllers/PenjualanController.php',
         'App\\Http\\Controllers\\PenjualanDetailController' => __DIR__ . '/../..' . '/app/Http/Controllers/PenjualanDetailController.php',
+        'App\\Http\\Controllers\\PoliceClearanceController' => __DIR__ . '/../..' . '/app/Http/Controllers/PoliceClearanceController.php',
         'App\\Http\\Controllers\\ProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductsController.php',
         'App\\Http\\Controllers\\ProdukController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProdukController.php',
         'App\\Http\\Controllers\\ScreeningController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScreeningController.php',

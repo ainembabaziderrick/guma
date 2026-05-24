@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Debtors;
 use App\Models\Candidate;
+use App\Http\ViewComposers\VisaComposer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -45,12 +46,14 @@ class AppServiceProvider extends ServiceProvider
 
         // share both with all views
         $view->with('cart_count', $cart_count)
-             ->with('pendingDebtorsCount', $pendingDebtorsCount);
+             ->with('pendingDebtorsCount', $pendingDebtorsCount);        
+    });
 
-        View::composer('*', function ($view) {
+    View::composer('*', function ($view) {
         $view->with('pendingCandidatesCount', Candidate::pending()->count());
     });
-    });
+
+    View::composer('layouts.master', VisaComposer::class);
 }
 
 

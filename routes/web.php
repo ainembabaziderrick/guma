@@ -33,6 +33,7 @@ use App\Http\Controllers\{
     ScreeningController,
     MedicalController,
     PoliceClearanceController,
+    VisaProcessingController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -161,6 +162,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/police-clearance', [PoliceClearanceController::class, 'index'])->name('police.index');
         Route::get('/police-clearance/data', [PoliceClearanceController::class, 'data'])->name('police.data');
         Route::post('/police-clearance/update', [PoliceClearanceController::class, 'update'])->name('police.update');
+
+        //Visa Processing
+        Route::get('/visa-processing', [VisaProcessingController::class, 'index'])->name('visa.index');
+        Route::get('/visa-processing/data', [VisaProcessingController::class, 'data'])->name('visa.data');
+        Route::post('/visa-processing/update', [VisaProcessingController::class, 'update'])->name('visa.update');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

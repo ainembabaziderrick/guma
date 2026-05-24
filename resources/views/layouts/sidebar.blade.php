@@ -64,7 +64,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('visa.index') }}">
                     <i class="fa fa-passport"></i> <span>Visa Processing</span>
                     @if(isset($pendingVisasCount) && $pendingVisasCount > 0)
                         <span class="badge badge-warning">{{ $pendingVisasCount }}</span>
