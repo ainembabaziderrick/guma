@@ -101,7 +101,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('commission.index') }}">
                     <i class="fa fa-percent"></i> <span>Agent Commissions</span>
                 </a>
             </li>

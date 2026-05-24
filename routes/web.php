@@ -39,6 +39,7 @@ use App\Http\Controllers\{
     PostDeploymentController,
     PaymentController,
     InvoiceController,
+    AgentCommissionController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -205,6 +206,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/invoices/{id}/update', [InvoiceController::class, 'update'])->name('invoice.update');
         Route::get('/invoices/{id}/print', [InvoiceController::class, 'print'])->name('invoice.print');
         Route::delete('/invoices/{id}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
+
+        //Agent Commissions
+        Route::get('/agent-commissions', [AgentCommissionController::class, 'index'])->name('commission.index');
+        Route::get('/agent-commissions/data', [AgentCommissionController::class, 'data'])->name('commission.data');
+        Route::post('/agent-commissions/store', [AgentCommissionController::class, 'store'])->name('commission.store');
+        Route::post('/agent-commissions/update', [AgentCommissionController::class, 'update'])->name('commission.update');
+        Route::post('/agent-commissions/pay', [AgentCommissionController::class, 'markPaid'])->name('commission.pay');
+        Route::delete('/agent-commissions/{id}', [AgentCommissionController::class, 'destroy'])->name('commission.destroy');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

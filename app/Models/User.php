@@ -70,4 +70,9 @@ class User extends Authenticatable
     {
         return $query->where('level', '!=', 1);
     }
+
+    public function commissions()
+    {
+        return $this->hasMany(AgentCommission::class, 'agent_id');
+    }
 }

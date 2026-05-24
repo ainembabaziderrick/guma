@@ -43,6 +43,7 @@ class Candidate extends Model
         return $this->hasMany(Payment::class);
     }
 
+
     public function getTotalPaidAttribute()
     {
         return $this->payments()->where('status', 'paid')->sum('amount');
@@ -51,6 +52,11 @@ class Candidate extends Model
     public function invoices()
     {
         return $this->hasMany(Invoice::class);
+    }
+
+    public function commissions()
+    {
+        return $this->hasMany(AgentCommission::class);
     }
 
 }
