@@ -35,6 +35,7 @@ use App\Http\Controllers\{
     PoliceClearanceController,
     VisaProcessingController,
     ContractController,
+    DeploymentController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -174,6 +175,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/contracts/data', [ContractController::class, 'data'])->name('contract.data');
         Route::post('/contracts/update', [ContractController::class, 'update'])->name('contract.update');
         Route::get('/contracts/download/{id}', [ContractController::class, 'download'])->name('contract.download');
+
+        //Deployments
+        Route::get('/deployments', [DeploymentController::class, 'index'])->name('deployment.index');
+        Route::get('/deployments/data', [DeploymentController::class, 'data'])->name('deployment.data');
+        Route::post('/deployments/update', [DeploymentController::class, 'update'])->name('deployment.update');
 
 
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');

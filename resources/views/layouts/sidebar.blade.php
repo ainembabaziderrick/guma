@@ -79,7 +79,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('deployment.index') }}">
                     <i class="fa fa-plane"></i> <span>Deployments</span>
                 </a>
             </li>
