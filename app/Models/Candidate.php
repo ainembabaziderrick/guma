@@ -12,6 +12,7 @@ class Candidate extends Model
     protected $table = 'candidates';
 
     protected $fillable = [
+        'user_id',
         'full_name', 'email', 'phone', 'nationality', 'position_applied', 
         'status', 'date_applied', 'remarks', 
         'medical_status', 'medical_date', 'medical_notes',
@@ -19,7 +20,8 @@ class Candidate extends Model
         'visa_status', 'visa_date', 'visa_notes',
         'contract_status', 'contract_date', 'contract_file', 'contract_notes',
         'deployment_status', 'departure_date', 'arrival_date', 'flight_number', 'destination', 'deployment_notes',
-        'post_deployment_status', 'probation_end_date', 'last_followup_date', 'post_deployment_notes'
+        'post_deployment_status', 'probation_end_date', 'last_followup_date', 'post_deployment_notes',
+        'region', 'district', 'county', 'subcounty', 'village', 'dob',
     ];
 
     protected $casts = [
@@ -57,6 +59,16 @@ class Candidate extends Model
     public function commissions()
     {
         return $this->hasMany(AgentCommission::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class, 'candidate_id');
     }
 
 }

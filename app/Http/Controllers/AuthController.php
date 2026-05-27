@@ -55,7 +55,7 @@ class AuthController extends Controller
             'nin' => $request->identification_type === 'NIN' ? $request->nin : null,
             'passport' => $request->identification_type === 'Passport' ? $request->passport : null,
             'status' => $request->status,
-            'level' => 2, // auto set to 2
+            'level' => 3, 
             'password' => Hash::make($request->password),
         ]);
 

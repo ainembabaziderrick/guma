@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Document extends Model
+{
+    protected $fillable = [
+        'candidate_id',
+        'title',
+        'type',
+        'file_path',
+    ];
+
+
+    public function candidate()
+    {
+        return $this->belongsTo(Candidate::class, 'candidate_id');
+    }
+}

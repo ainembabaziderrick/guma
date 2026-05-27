@@ -36,7 +36,7 @@
                                 <th>Full Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>Nationality</th>
+                                <th>Region</th>
                                 <th>Position Applied</th>
                                 <th>Status</th>
                                 <th>Date Applied</th>
@@ -72,7 +72,7 @@
                 {data: 'full_name'},
                 {data: 'email'},
                 {data: 'phone'},
-                {data: 'nationality'},
+                {data: 'region'},
                 {data: 'position_applied'},
                 {data: 'status'},
                 {data: 'date_applied'},
@@ -122,7 +122,7 @@
             $('#modal-form [name=full_name]').val(response.full_name);
             $('#modal-form [name=email]').val(response.email);
             $('#modal-form [name=phone]').val(response.phone);
-            $('#modal-form [name=nationality]').val(response.nationality);
+            $('#modal-form [name=region]').val(response.region);
             $('#modal-form [name=position_applied]').val(response.position_applied);
             $('#modal-form [name=status]').val(response.status);
             $('#modal-form [name=date_applied]').val(response.date_applied);

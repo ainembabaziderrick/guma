@@ -134,17 +134,12 @@
             <!-- RECRUITMENT OFFICER -->
             <li class="header">RECRUITMENT</li>
             <li>
-                <a href="">
+                <a href="{{ route('candidates.index') }}">
                     <i class="fa fa-users"></i> <span>Candidates</span>
                 </a>
-            </li>
+            </li>            
             <li>
-                <a href="">
-                    <i class="fa fa-user-plus"></i> <span>New Application</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
+                <a href="{{ route('screening.index') }}">
                     <i class="fa fa-check-square-o"></i> <span>Screening</span>
                 </a>
             </li>
@@ -156,18 +151,15 @@
 
             <li class="header">JOB ORDERS</li>
             <li>
-                <a href="">
+                <a href="{{ route('job-orders.index') }}">
                     <i class="fa fa-briefcase"></i> <span>Available Jobs</span>
                 </a>
             </li>
             <li>
-                <a href=" ">
+                <a href="{{ route('candidates.index') }}">
                     <i class="fa fa-link"></i> <span>Match Candidates</span>
                 </a>
             </li>
-
-            @elseif(auth()->user()->level == 3)
-            <!-- DOCUMENTATION OFFICER -->
             <li class="header">DOCUMENTATION</li>
             <li>
                 <a href="">
@@ -175,17 +167,17 @@
                 </a>
             </li>
             <li>
-                <a href=" ">
+                <a href="{{ route('medical.index') }}">
                     <i class="fa fa-medkit"></i> <span>Medical Tracking</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('police.index') }}">
                     <i class="fa fa-shield"></i> <span>Police Clearance</span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{ route('visa.index') }}">
                     <i class="fa fa-passport"></i> <span>Visa Processing</span>
                     @if(isset($pendingVisasCount) && $pendingVisasCount > 0)
                         <span class="badge badge-warning">{{ $pendingVisasCount }}</span>
@@ -205,24 +197,21 @@
                 </a>
             </li>
             <li>
-                <a href="">
-                    <i class="fa fa-list"></i> <span>Deployment List</span>
-                </a>
-            </li>
+                <a href="{{ route('deployment.index') }}">
                     <i class="fa fa-list"></i> <span>Deployment List</span>
                 </a>
             </li>
 
-            @elseif(auth()->user()->level == 4)
+            @elseif(auth()->user()->level == 3)
             <!-- CANDIDATE / APPLICANT -->
             <li class="header">MY APPLICATION</li>
             <li>
-                <a href="">
-                    <i class="fa fa-user"></i> <span>My Profile</span>
+                <a href="{{ route('applicant.profile') }}">
+                    <i class="fa fa-user"></i> <span>My Info</span>
                 </a>
             </li>
             <li>
-                <a href=" ">
+                <a href="{{ route('applicant.documents') }}">
                     <i class="fa fa-file-upload"></i> <span>My Documents</span>
                 </a>
             </li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Candidate;
+use App\Models\Document;
 
 class MedicalController extends Controller
 {
@@ -11,42 +12,37 @@ class MedicalController extends Controller
     {
         return view('medical.index');
     }
+   
 
-    public function data()
-    {
-        // Show only candidates that are shortlisted or further
-        $candidates = Candidate::whereIn('status', ['shortlisted', 'hired'])
-            ->orderBy('id', 'desc');
+public function data()
+{
+    $documents = Document::where('type', 'medical_exam')
+        ->with('candidate:id,full_name') 
+        ->select('documents.*')
+        ->latest();
 
-        return datatables()
-            ->of($candidates)
-            ->addIndexColumn()
-            ->addColumn('select_all', fn($c) => '<input type="checkbox" name="id[]" value="'.$c->id.'">')
-            ->addColumn('medical_status', function($c){
-                $labels = [
-                    'not_scheduled' => 'default',
-                    'scheduled' => 'warning',
-                    'passed' => 'success',
-                    'failed' => 'danger'
-                ];
-                $label = $labels[$c->medical_status] ?? 'default';
-                return '<span class="label label-'.$label.'">'.str_replace('_', ' ', $c->medical_status).'</span>';
-            })
-            ->editColumn('medical_date', fn($c) => $c->medical_date ? \Carbon\Carbon::parse($c->medical_date)->format('Y-m-d') : '-')
-            ->addColumn('action', function ($c) {
-                return '
-                <div class="btn-group">
-                    <button onclick="openMedicalModal('.$c->id.')" class="btn btn-xs btn-primary btn-flat">
-                        <i class="fa fa-edit"></i> Update
-                    </button>
-                    <button onclick="viewCandidate('.$c->id.')" class="btn btn-xs btn-default btn-flat">
-                        <i class="fa fa-eye"></i>
-                    </button>
-                </div>';
-            })
-            ->rawColumns(['select_all', 'medical_status', 'action'])
-            ->make(true);
-    }
+    return datatables()
+        ->of($documents)
+        ->addIndexColumn()
+        ->addColumn('candidate_name', fn($d) => optional($d->candidate)->full_name ?? 'N/A')
+        ->addColumn('title', fn($d) => $d->title)
+        ->addColumn('type', fn($d) => 'Medical Exam')
+        ->editColumn('created_at', fn($d) => $d->created_at->format('d M Y'))
+        ->addColumn('action', function ($d) {
+            $view = '<a href="'.asset('storage/'.$d->file_path).'" target="_blank" class="btn btn-xs btn-info">
+                        <i class="fa fa-eye"></i> View
+                     </a>';
+            $download = '<a href="'.route('applicant.documents.download', $d->id).'" class="btn btn-xs btn-success">
+                            <i class="fa fa-download"></i> Download
+                         </a>';
+            $update = '<button onclick="openMedicalModal('.$d->candidate_id.')" class="btn btn-xs btn-primary">
+                          <i class="fa fa-edit"></i> Update Status
+                       </button>';
+            return $view.' '.$download.' '.$update;
+        })
+        ->rawColumns(['action'])
+        ->toJson(); 
+}
 
     public function update(Request $request)
     {

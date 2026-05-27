@@ -38,9 +38,9 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="nationality" class="col-lg-2 col-lg-offset-1 control-label">Nationality</label>
+                        <label for="region" class="col-lg-2 col-lg-offset-1 control-label">Region</label>
                         <div class="col-lg-6">
-                            <input type="text" name="nationality" id="nationality" class="form-control">
+                            <input type="text" name="region" id="region" class="form-control">
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>

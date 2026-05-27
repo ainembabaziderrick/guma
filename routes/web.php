@@ -41,6 +41,7 @@ use App\Http\Controllers\{
     InvoiceController,
     AgentCommissionController,
     ReportController,
+    ApplicantController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -132,7 +133,7 @@ Route::delete('/admin/messages/{message}', [MessageController::class, 'destroy']
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::group(['middleware' => 'level:1,5'], function () {
+    Route::group(['middleware' => 'level:1,2'], function () {
 
         //Employers
         Route::get('/employers/data', [EmployerController::class, 'data'])->name('employers.data');
@@ -302,7 +303,29 @@ Route::group(['middleware' => 'auth'], function () {
 
     });
 
-    Route::group(['middleware' => 'level:1,2,5'], function () {
+    Route::middleware(['middleware' => 'level:3'])->prefix('applicant')->name('applicant.')->group(function () {
+        Route::get('/profile', [ApplicantController::class, 'profile'])->name('profile');
+        Route::post('/profile/update', [ApplicantController::class, 'updateProfile'])->name('profile.update');
+        
+        Route::get('/jobs', [ApplicantController::class, 'availableJobs'])->name('jobs');
+        Route::get('/documents', [ApplicantController::class, 'documents'])->name('documents.index');
+        Route::get('/status', [ApplicantController::class, 'status'])->name('status');
+        Route::get('/contract', [ApplicantController::class, 'contract'])->name('contract');
+        Route::get('/payments', [ApplicantController::class, 'payments'])->name('payments');
+        Route::get('/documents', [ApplicantController::class, 'documents'])->name('documents');
+        Route::post('/documents/upload', [ApplicantController::class, 'uploadDocument'])->name('documents.upload');
+        Route::get('/documents/download/{id}', [ApplicantController::class, 'downloadDocument'])->name('documents.download');
+});
+
+    Route::group(['middleware' => 'level:3,4'], function () {
+        Route::get('/profile', [ApplicantController::class, 'profile'])->name('applicant.profile');
+        Route::post('/profile/update', [ApplicantController::class, 'updateProfile'])->name('applicant.profile.update');
+
+
+
+
+
+
         Route::get('/transaksi/baru', [PenjualanController::class, 'create'])->name('transaksi.baru');
         Route::post('/transaksi/simpan', [PenjualanController::class, 'store'])->name('transaksi.simpan');
         Route::get('/transaksi/selesai', [PenjualanController::class, 'selesai'])->name('transaksi.selesai');
