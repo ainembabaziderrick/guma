@@ -14,18 +14,18 @@
     <div class="col-lg-12">
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Visa Processing Status</h3>
+                <h3 class="box-title">Candidates Visa Documents</h3>
             </div>
             <div class="box-body table-responsive">
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th>Full Name</th>
-                            <th>Position Applied</th>
-                            <th>Visa Status</th>
-                            <th>Visa Date</th>
-                            <th width="15%">Action</th>
+                            <th>Candidate Name</th>
+                            <th>Document Title</th>
+                            <th>Type</th>
+                            <th>Uploaded On</th>
+                            <th width="20%">Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -50,10 +50,10 @@ $(function () {
         ajax: '{{ route('visa.data') }}',
         columns: [
             {data: 'DT_RowIndex', searchable: false, sortable: false},
-            {data: 'full_name'},
-            {data: 'position_applied'},
-            {data: 'visa_status'},
-            {data: 'visa_date'},
+            {data: 'candidate_name'},
+            {data: 'title'},
+            {data: 'type'},
+            {data: 'created_at'},
             {data: 'action', searchable: false, sortable: false}
         ]
     });

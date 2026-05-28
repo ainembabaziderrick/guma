@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Candidate;
+use App\Models\Document;
 
 class VisaProcessingController extends Controller
 {
@@ -14,38 +15,32 @@ class VisaProcessingController extends Controller
 
     public function data()
     {
-        // Show candidates cleared by police
-        $candidates = Candidate::where('police_status', 'cleared')
-            ->orderBy('id', 'desc');
+        $documents = Document::where('type', 'visa')
+            ->with('candidate:id,full_name') 
+            ->select('documents.*')
+            ->latest();
 
         return datatables()
-            ->of($candidates)
+            ->of($documents)
             ->addIndexColumn()
-            ->addColumn('visa_status', function($c){
-                $labels = [
-                    'not_started' => 'default',
-                    'submitted' => 'warning',
-                    'approved' => 'info',
-                    'rejected' => 'danger',
-                    'issued' => 'success'
-                ];
-                $label = $labels[$c->visa_status] ?? 'default';
-                return '<span class="label label-'.$label.'">'.str_replace('_', ' ', $c->visa_status).'</span>';
+            ->addColumn('candidate_name', fn($d) => optional($d->candidate)->full_name ?? 'N/A')
+            ->addColumn('title', fn($d) => $d->title)
+            ->addColumn('type', fn($d) => 'Visa')
+            ->editColumn('created_at', fn($d) => $d->created_at->format('d M Y'))
+            ->addColumn('action', function ($d) {
+                $view = '<a href="'.asset('storage/'.$d->file_path).'" target="_blank" class="btn btn-xs btn-info">
+                            <i class="fa fa-eye"></i> View
+                         </a>';
+                $download = '<a href="'.route('applicant.documents.download', $d->id).'" class="btn btn-xs btn-success">
+                                <i class="fa fa-download"></i> Download
+                             </a>';
+                $update = '<button onclick="openVisaModal('.$d->candidate_id.')" class="btn btn-xs btn-primary">
+                              <i class="fa fa-edit"></i> Update Status
+                           </button>';
+                return $view.' '.$download.' '.$update;
             })
-            ->editColumn('visa_date', fn($c) => $c->visa_date ? \Carbon\Carbon::parse($c->visa_date)->format('Y-m-d') : '-')
-            ->addColumn('action', function ($c) {
-                return '
-                <div class="btn-group">
-                    <button onclick="openVisaModal('.$c->id.')" class="btn btn-xs btn-primary btn-flat">
-                        <i class="fa fa-edit"></i> Update
-                    </button>
-                    <button onclick="viewCandidate('.$c->id.')" class="btn btn-xs btn-default btn-flat">
-                        <i class="fa fa-eye"></i>
-                    </button>
-                </div>';
-            })
-            ->rawColumns(['visa_status', 'action'])
-            ->make(true);
+            ->rawColumns(['action'])
+            ->toJson(); 
     }
 
     public function update(Request $request)
